@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 09:05:54 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/09 12:17:04 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/09 11:02:25 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/09 12:15:10 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+char	*ft_strdup(char *src)
 {
-	int	res;
+	char	*dest;
+	int		i;
+	int		len;
 
-	res = 1;
-	if (nb > 16 || nb < 0)
-		return (0);
-	else if (nb == 0)
-		return (1);
-	while (nb > 0)
+	len = 0;
+	while (src[len])
+		len++;
+	dest = (char *)malloc(sizeof(char) * len);
+	if (dest == NULL)
+		return (NULL);
+	else
 	{
-		res *= nb;
-		nb--;
+		while (src[i] != '\0')
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+		return (dest);
 	}
-	return (res);
 }

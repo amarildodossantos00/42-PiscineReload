@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 09:05:54 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/09 12:17:04 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/09 12:18:00 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 09:03:31 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	*ft_range(int min, int max)
 {
-	int	res;
+	int	*range;
+	int	i;
+	int	size;
 
-	res = 1;
-	if (nb > 16 || nb < 0)
-		return (0);
-	else if (nb == 0)
-		return (1);
-	while (nb > 0)
+	i = 0;
+	if (min >= max)
+		return (NULL);
+	size = max - min;
+	range = (int *)malloc(sizeof(int) * size);
+	if (range == NULL)
+		return (NULL);
+	while (i < size)
 	{
-		res *= nb;
-		nb--;
+		range[i] = min++;
+		i++;
 	}
-	return (res);
+	return (range);
 }
