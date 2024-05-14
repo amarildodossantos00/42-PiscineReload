@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 14:16:52 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/10 14:17:03 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/10 14:21:20 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 14:21:24 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putstr(char *str)
+int	ft_count_if(char **tab, int (*f)(char*))
 {
-	int	i;
+	int	h;
+	int	num;
 
-	i = 0;
-	while (str[i] != '\0')
+	h = 0;
+	num = 0;
+	while (tab[h])
 	{
-		ft_putchar(str[i]);
-		i++;
+		if (f(tab[h]) == 1)
+			num++;
+		h++;
 	}
+	return (num);
 }

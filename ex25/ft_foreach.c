@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 14:16:52 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/10 14:17:03 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/10 14:20:59 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 14:21:04 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putstr(char *str)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (i < length)
 	{
-		ft_putchar(str[i]);
+		f(tab[i]);
 		i++;
 	}
 }

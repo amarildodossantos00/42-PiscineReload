@@ -5,59 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 09:07:15 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/09 09:07:34 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/10 14:18:53 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 14:18:56 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *str1, char *str2)
+void	ft_putchar(char c);
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str1[i] == str2[i] && str1[i] != '\0')
-		i++;
-	return (str1[i] - str2[i]);
+	while (str[i])
+		ft_putchar(str[i++]);
 }
 
-void	ft_print_args(int argc, char **argv)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < argc)
+	while (*s1 == *s2 && *s1)
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		i++;
-		ft_putchar('\n');
+		s1++;
+		s2++;
 	}
+	return (*s1 - *s2);
+}
+
+void	ft_swap(char **a, char **b)
+{
+	char	*tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 int	main(int argc, char **argv)
 {
-	int		i;
 	int		j;
-	char	*arg;
+	int		i;
 
 	i = 1;
-	while (i < argc)
+	while (i < argc - 1)
 	{
-		j = i;
-		while (ft_strcmp(argv[j], argv[j - 1]) < 0 && j > 1)
+		j = 1;
+		while (j < argc - 1)
 		{
-			arg = argv[j - 1];
-			argv[j - 1] = argv[j];
-			argv[j] = arg;
-			j--;
+			if (ft_strcmp(argv[j], argv[j + 1]) > 0)
+			{
+				ft_swap(&argv[j], &argv[j + 1]);
+			}
+			j++;
 		}
 		i++;
 	}
-	ft_print_args(argc, argv);
+	j = 1;
+	while (j < argc)
+	{
+		ft_putstr(argv[j]);
+		ft_putchar('\n');
+		j++;
+	}
 	return (0);
 }

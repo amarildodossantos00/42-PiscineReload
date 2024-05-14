@@ -5,28 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 12:18:00 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/10 09:03:31 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/10 14:19:25 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 14:19:28 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 int	*ft_range(int min, int max)
 {
-	int	*range;
+	int	*tab;
 	int	i;
-	int	size;
 
 	i = 0;
 	if (min >= max)
 		return (NULL);
-	size = max - min;
-	range = (int *)malloc(sizeof(int) * size);
-	if (range == NULL)
-		return (NULL);
-	while (i < size)
+	tab = (int *)malloc(sizeof(*tab) * (max - min));
+	i = 0;
+	while (min < max)
 	{
-		range[i] = min++;
+		tab[i] = min;
 		i++;
+		min++;
 	}
-	return (range);
+	return (tab);
 }

@@ -5,19 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 11:04:41 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/03 16:28:24 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/10 14:13:41 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 14:13:47 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_putchar(char c);
+
 void	ft_print_alphabet(void)
 {
-	char	alphabet;
+	char	c;
 
-	alphabet = 'a';
-	while (alphabet <= 'z')
+	c = 'a';
+	while (c <= 'z')
 	{
-		ft_putchar(alphabet);
-		alphabet++;
+		ft_putchar(c);
+		c++;
 	}
 }

@@ -5,12 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 09:24:43 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/10 09:40:50 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/10 14:19:50 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 14:26:42 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ABS.H
-#define FT_ABS.H
-#define ABS(number)(number < 0) ? (number * (-1)) : (number);
+#ifndef FT_ABS_H
+
+# define FT_ABS_H
+# define ABS(Value) ((Value < 0) ? -Value : Value)
+
 #endif

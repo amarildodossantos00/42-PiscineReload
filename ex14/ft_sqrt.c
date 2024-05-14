@@ -5,21 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 08:41:15 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/07 09:07:43 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/10 14:16:35 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 14:16:39 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
-	int	raiz;
+	int	r;
 
-	raiz = 1;
-	while (raiz * raiz <= nb)
-	{
-		if (raiz * raiz == nb)
-			return (raiz);
-		raiz++;
-	}
-	return (0);
-}
+	r = 1;
+	while (r * r < nb)
+		r++;
+	if (r * r == nb)
+		return (r);
+	else
+		return (0);
+}	

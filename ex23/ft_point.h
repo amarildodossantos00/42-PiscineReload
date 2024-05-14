@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 14:16:52 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/10 14:17:03 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/10 14:20:08 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 14:20:12 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-void	ft_putstr(char *str)
+typedef struct s_point	t_point;
+
+struct	s_point
 {
-	int	i;
+	int	x;
+	int	y;
+};
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
+#endif

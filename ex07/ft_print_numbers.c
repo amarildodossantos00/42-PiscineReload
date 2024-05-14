@@ -5,19 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amdos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 11:11:25 by amdos-sa          #+#    #+#             */
-/*   Updated: 2024/05/03 16:28:59 by amdos-sa         ###   ########.fr       */
+/*   Created: 2024/05/10 14:13:58 by amdos-sa          #+#    #+#             */
+/*   Updated: 2024/05/10 14:14:19 by amdos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_putchar(char c);
+
 void	ft_print_numbers(void)
 {
-	char	digit;
+	char	c;
 
-	digit = '0';
-	while (digit <= '9')
+	c = '0';
+	while (c <= '9')
 	{
-		ft_putchar(digit);
-		digit++;
+		ft_putchar(c);
+		c++;
 	}
 }
